@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nexa PvP - Minecraft Mini Games</title>
+  <link rel="stylesheet" href="Nexa_pvp.css">
+  <link rel="icon" href="NexaPvpWhite.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="NexaPvpWhite.png" alt="Nexa PvP Logo">
+      <h1>play.<span>nexapvp.net</span></h1>
+    </div>
+<nav>
+  <ul>
+    <li><a class="home" href="Nexa-pvp.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="Forums.html"><i class="fas fa-comments"></i> Forums</a></li>
+    <li><a href="Store.html"><i class="fas fa-shopping-cart"></i> Store</a></li>
+    <li><a href="#"><i class="fas fa-key"></i> Vote</a></li>
+    <li><a href="#"><i class="fas fa-users-cog"></i> Staff</a></li>
+    <li><a href="#"><i class="fas fa-book"></i> Rules</a></li>
+  </ul>
+</nav>
+
+    <div class="buttons">
+      <button class="play-btn">Play Now</button>
+
+    </div>
+  
+  </header>
+
+<!-- Floating Social Icons -->
+<div class="floating-icons">
+  <a href="https://discord.com/invite/zYNhC7ZAdc" target="_blank" class="icon discord" title="Join us on Discord">
+    <!-- Use a smaller Discord icon -->
+    <img src="discord.png.png" alt="Discord">
+  </a>
+  <a href="https://www.youtube.com/@nexapvp-yt" target="_blank" class="icon youtube" title="Watch us on YouTube">
+    <img src="youtube.png" alt="YouTube">
+  </a>
+</div>
+
+
+
+  <main>
+    <section class="welcome">
+      <h2 class="glow-heading">Welcome to Nexa PvP!</h2>
+      <p>A high-end, luxury Minecraft experience built for elite players</p>
+    </section>
+<section class="nexa-banner">
+  <div class="banner-content">
+
+    <!-- Left Arrow -->
+    <button class="arrow-btn left-arrow">⇐</button>
+
+    <!-- Left image and caption box -->
+    <div class="image-card" id="left-card">
+      <img src="mysterybox.webp" alt="Left Feature" class="side-img" id="left-img">
+      <div class="caption-box" id="left-caption">🎁 Open Mystery Vaults to win exclusive rewards!</div>
+    </div>
+
+    <!-- Center logo -->
+    <img src="NexaPvP-removebg-preview.png" alt="Nexa PvP Logo" class="nexa-logo">
+
+    <!-- Right image and caption box -->
+    <div class="image-card" id="right-card">
+      <img src="shipNexa.webp" alt="Right Feature" class="side-img" id="right-img">
+      <div class="caption-box" id="right-caption">🧗 Master challenging Parkour courses and climb the leaderboards!</div>
+    </div>
+<button class="arrow-btn right-arrow">⇒</button>
+
+
+  </div>
+</section>
+
+
+  <main class="main-content">
+    <!-- Featured Post -->
+    <section class="featured">
+      <img src="bwlobby.webp" alt="Lifesteal SMP" />
+      <div class="info">
+        <h2>🎉 Play Bedwars with your friends!</h2>
+        <p>
+          New maps, new challenges, and awesome rewards await!, <br><br> bringing new features, <br><br>fresh challenges, and exciting gameplay <br><br> New Features & Updates: <br><br> 🐝New Currency Coins <br><br>  👑Fresh Leaderboards 🔑Crate Key...
+        </p>
+        <div class="meta">
+          <img src="NexaPvpWhite.png" alt="Author" />
+          <span>Nexa Pvp</span> · <span>Jul 20th, 2025</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lower News Blocks -->
+    <section class="grid">
+      <div class="card">
+        <img src="lobbyskull.webp" alt="Duels Server" />
+        <div class="text">
+          <h3>⚡️ Nexa Duels 💯</h3>
+          <p>🎯 COMING SOON!</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="nexaship.webp" alt="Anniversary" />
+        <div class="text">
+          <h3>🎉 Play Survival with your friends! 🏆</h3>
+          <p>🎯 COMING SOON!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  </main>
+
+  <!-- Modal Popup -->
+<div id="popupModal" class="modal">
+  <div class="modal-content">
+    <h2>✔ Server IP Copied</h2>
+    <p>We hope to see you online soon!</p>
+    <button id="okBtn">OK</button>
+  </div>
+</div>
+
+<!-- Script to handle Play Now behavior -->
+<script>
+   const slides = [
+    {
+      left:  'mysterybox.webp',
+      leftTxt: '🎁 Open Mystery Vaults to win exclusive rewards!',
+      right: 'shipNexa.webp',
+      rightTxt: '🧗 Master challenging Parkour courses and climb the leaderboards!'
+    },
+    {
+      left:  '2.webp',
+      leftTxt: '👑 QuickBuy: get exclusive items instantly!🥇',
+      right: '3.webp',
+      rightTxt: ' Check the Parkour Leaderboard and see the champs!'
+    },
+    {
+      left:  '4.webp',
+      leftTxt: '🏰 Explore our magical medieval town!',
+      right: '1.webp',
+      rightTxt: '🌀 Discover the dark enchanted hub!'
+    }
+  ];
+
+  let current = 0;
+  const leftImg = document.getElementById('left-img');
+  const rightImg = document.getElementById('right-img');
+  const leftCap = document.getElementById('left-caption');
+  const rightCap = document.getElementById('right-caption');
+
+  function updateSlide(idx) {
+    const s = slides[idx];
+    leftImg.src = s.left;
+    leftCap.textContent = s.leftTxt;
+    rightImg.src = s.right;
+    rightCap.textContent = s.rightTxt;
+  }
+
+  document.querySelector('.left-arrow').addEventListener('click', () => {
+    current = (current - 1 + slides.length) % slides.length;
+    updateSlide(current);
+    resetTimer();
+  });
+
+  document.querySelector('.right-arrow').addEventListener('click', () => {
+    current = (current + 1) % slides.length;
+    updateSlide(current);
+    resetTimer();
+  });
+
+  let timer = setInterval(() => {
+    current = (current + 1) % slides.length;
+    updateSlide(current);
+  }, 4000);
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => {
+      current = (current + 1) % slides.length;
+      updateSlide(current);
+    }, 4000);
+  }
+
+  // Initialize on page load
+  updateSlide(current);
+  document.querySelector('.play-btn').addEventListener('click', () => {
+    const ip = "play.nexapvp.net";
+    navigator.clipboard.writeText(ip).then(() => {
+      document.getElementById('popupModal').style.display = 'flex';
+    }).catch((err) => {
+      alert("Failed to copy IP: " + err);
+    });
+  });
+
+  document.getElementById('okBtn').addEventListener('click', () => {
+  document.getElementById('popupModal').style.display = 'none';
+  window.location.href = "Nexa-pvp.html"; // Redirect to Nexa-pvp.html
+});
+
+</script>
+
+ <footer>
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h3>ABOUT US</h3>
+        <p>
+          NexaPvP is one of the top Minecraft servers! Built for elite players, we offer exciting game modes like BedWars, SkyBlock, KitPvP, Lifesteal, and more. <br />
+          Join us at: <strong>play.nexapvp.net</strong>
+        </p>
+      </div>
+
+      <div class="footer-section links">
+        <h3>LINKS</h3>
+        <ul>
+          <li><a href="#">Back to Top</a></li>
+          <li><a href="Nexa-ContactUs.html">Contact Us</a></li>
+          <li><a href="#">Terms and Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Responsible Disclosure</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section support">
+        <h3>SUPPORT US</h3>
+        <p>Enjoying the server? Support us by purchasing ranks, keys, and other perks.</p>
+        <a href="Store.html" class="store-button">Visit Store</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

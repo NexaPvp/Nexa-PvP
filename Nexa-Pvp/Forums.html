@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Forums.css">
+  <link rel="icon" href="NexaPvpWhite.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Document</title>
+   <header>
+    <div class="logo">
+      <img src="NexaPvpWhite.png" alt="Nexa PvP Logo">
+      <h1>play.<span>nexapvp.net</span></h1>
+    </div>
+<nav>
+  <ul>
+    <li><a class="home" href="Nexa-pvp.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a class="forumss" href="Forums.html"><i class="fas fa-comments"></i> Forums</a></li>
+    <li><a href="Store.html"><i class="fas fa-shopping-cart"></i> Store</a></li>
+    <li><a href="#"><i class="fas fa-key"></i> Vote</a></li>
+    <li><a href="#"><i class="fas fa-users-cog"></i> Staff</a></li>
+    <li><a href="#"><i class="fas fa-book"></i> Rules</a></li>
+  </ul>
+</nav>
+
+    <div class="buttons">
+      <button class="play-btn">Play Now</button>
+
+    </div>
+  </header>
+
+<!-- Floating Social Icons -->
+<div class="floating-icons">
+  <a href="https://discord.com/invite/zYNhC7ZAdc" target="_blank" class="icon discord" title="Join us on Discord">
+    <!-- Use a smaller Discord icon -->
+    <img src="discord.png.png" alt="Discord">
+  </a>
+  <a href="https://www.youtube.com/@nexapvp-yt" target="_blank" class="icon youtube" title="Watch us on YouTube">
+    <img src="youtube.png" alt="YouTube">
+  </a>
+</div>
+</head>
+<body>
+  <section class="report-forums-section">
+  <h2 class="rf-heading">
+    📢 Report / Forums
+  </h2>
+  <div class="rf-cards">
+    <div class="rf-card">
+      <h3>📩 Report an Issue</h3>
+      <p>If you've encountered a bug or want to report a rule violation, click below:</p>
+      <a class="rf-button" href="https://discord.com/channels/1388387778676527194/1389919460487331920" target="_blank">Report</a>
+    </div>
+    <div class="rf-card">
+      <h3>💬 Forums</h3>
+      <p>Join our community forums to discuss ideas, strategies, or get support:</p>
+      <a class="rf-button" href="https://discord.com/channels/1388387778676527194/1389919131905560626" target="_blank">Forums</a>
+    </div>
+  </div>
+</section>
+
+    <div class="floating-icons">
+  <a href="https://discord.com/invite/zYNhC7ZAdc" target="_blank" class="icon discord" title="Join us on Discord">
+    <!-- Use a smaller Discord icon -->
+    <img src="discord.png.png" alt="Discord">
+  </a>
+  <a href="https://www.youtube.com/@nexapvp-yt" target="_blank" class="icon youtube" title="Watch us on YouTube">
+    <img src="youtube.png" alt="YouTube">
+  </a>
+</div>
+  </main>
+  <!-- Modal Popup -->
+<div id="popupModal" class="modal">
+  <div class="modal-content">
+    <h2>✔ Server IP Copied</h2>
+    <p>We hope to see you online soon!</p>
+    <button id="okBtn">OK</button>
+  </div>
+</div>
+<script>
+  document.querySelector('.play-btn').addEventListener('click', () => {
+    const ip = "play.nexapvp.net";
+    navigator.clipboard.writeText(ip).then(() => {
+      document.getElementById('popupModal').style.display = 'flex';
+    }).catch((err) => {
+      alert("Failed to copy IP: " + err);
+    });
+  });
+
+  document.getElementById('okBtn').addEventListener('click', () => {
+  document.getElementById('popupModal').style.display = 'none';
+  window.location.href = "Store.html"; // Redirect to Nexa-pvp.html
+});
+
+</script>
+
+ <footer>
+  <div class="footer-container">
+    <div class="footer-section about">
+      <h3>ABOUT US</h3>
+      <p>
+        NexaPvP is one of the top Minecraft servers! Built for elite players, we offer exciting game modes like BedWars, SkyBlock, KitPvP, Lifesteal, and more. <br>
+        Join us at: <strong>play.nexapvp.net</strong>
+      </p>
+    </div>
+
+    <div class="footer-section links">
+      <h3>LINKS</h3>
+      <ul>
+        <li><a href="#">Back to Top</a></li>
+        <li><a href="Nexa-ContactUs.html">Contact Us</a></li>
+        <li><a href="#">Terms and Conditions</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Responsible Disclosure</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section support">
+      <h3>SUPPORT US</h3>
+      <p>
+        Enjoying the server? Support us by purchasing ranks, keys, and other perks.
+      </p>
+      <a href="Store.html" class="store-button">Visit Store</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
